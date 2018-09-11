@@ -1,0 +1,165 @@
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\csc.exe
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\System.Collections.Immutable.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\vbc.exe
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\VBCSCompiler.exe
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\roslyn\VBCSCompiler.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.Web.dll.config
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.Web.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.Web.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.BLL.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.Model.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Helpers.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Mvc.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Razor.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.Deployment.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.Razor.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.BLL.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.Model.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Razor.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.Deployment.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Webpages.Razor.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Helpers.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\System.Web.Mvc.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\obj\Debug\Book.Web.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\obj\Debug\Book.Web.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\obj\Debug\Book.Web.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.DAL.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Web\bin\Book.DAL.pdb
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\csc.exe
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\vbc.exe
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.Web.dll.config
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.Web.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.Web.pdb
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.BLL.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.Model.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Razor.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.DAL.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.BLL.pdb
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.Model.pdb
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Razor.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Downloads\Book\Book.Web\bin\Book.DAL.pdb
+C:\Users\Administrator\Downloads\Book\Book.Web\obj\Debug\Book.Web.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\Book\Book.Web\obj\Debug\Book.Web.dll
+C:\Users\Administrator\Downloads\Book\Book.Web\obj\Debug\Book.Web.pdb
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\csc.exe
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\vbc.exe
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.Web.dll.config
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.Web.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.Web.pdb
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.BLL.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.Model.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.DAL.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.BLL.pdb
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.Model.pdb
+C:\Users\Administrator\Desktop\Book\Book.Web\bin\Book.DAL.pdb
+C:\Users\Administrator\Desktop\Book\Book.Web\obj\Debug\Book.Web.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Book\Book.Web\obj\Debug\Book.Web.dll
+C:\Users\Administrator\Desktop\Book\Book.Web\obj\Debug\Book.Web.pdb
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\csc.exe
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\vbc.exe
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\admin\Desktop\Book\Book.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.Web.dll.config
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.Web.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.Web.pdb
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.BLL.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.Model.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Helpers.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Mvc.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Razor.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.DAL.dll
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.BLL.pdb
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.Model.pdb
+C:\Users\admin\Desktop\Book\Book.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Razor.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Helpers.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\System.Web.Mvc.xml
+C:\Users\admin\Desktop\Book\Book.Web\bin\Book.DAL.pdb
+C:\Users\admin\Desktop\Book\Book.Web\obj\Debug\Book.Web.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Book\Book.Web\obj\Debug\Book.Web.dll
+C:\Users\admin\Desktop\Book\Book.Web\obj\Debug\Book.Web.pdb
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\csc.exe
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\vbc.exe
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\VBCSCompiler.exe
+D:\VS2015解决方案\Book\Book.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\VS2015解决方案\Book\Book.Web\bin\Book.Web.dll.config
+D:\VS2015解决方案\Book\Book.Web\bin\Book.Web.dll
+D:\VS2015解决方案\Book\Book.Web\bin\Book.Web.pdb
+D:\VS2015解决方案\Book\Book.Web\bin\Book.BLL.dll
+D:\VS2015解决方案\Book\Book.Web\bin\Book.Model.dll
+D:\VS2015解决方案\Book\Book.Web\bin\Book.DAL.dll
+D:\VS2015解决方案\Book\Book.Web\bin\Book.BLL.pdb
+D:\VS2015解决方案\Book\Book.Web\bin\Book.Model.pdb
+D:\VS2015解决方案\Book\Book.Web\bin\Book.DAL.pdb
+D:\VS2015解决方案\Book\Book.Web\obj\Debug\Book.Web.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\Book\Book.Web\obj\Debug\Book.Web.dll
+D:\VS2015解决方案\Book\Book.Web\obj\Debug\Book.Web.pdb

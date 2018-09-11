@@ -1,0 +1,371 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>书籍展示页面</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+
+                <div class="col-md-12 mt">
+                    <div class="content-panel">
+
+
+                        <table id="bookList"></table>
+                        <div id="toolbar" class="btn-group pull-right" style="margin-right: 20px;">
+                            <button id="btn_edit" type="button" class="btn btn-default" style=" border-radius 0">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+                            </button>
+                            <button id="btn_delete" type="button" class="btn btn-default" style="">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                            </button>
+                            <button id="btn_add" type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+                            </button>
+                        </div>
+                        @*<table class="table table-hover">
+                                <h4><i class="fa fa-angle-right"></i>书籍信息</h4>
+                                <hr>
+                                <thead>
+                                    <tr>
+                                        <th>Id号</th>
+                                        <th>书籍名称</th>
+                                        <th>作者</th>
+                                        <th>ISBN号</th>
+                                        <th>出版社名称</th>
+                                        <th>版次</th>
+                                        <th>价格</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    @foreach (var item in page.list)
+                                    {
+                                        <tr>
+                                            <th>@item.id</th>
+                                            <th>@item.BookName</th>
+                                            <th>@item.Author</th>
+                                            <th>@item.ISBN</th>
+                                            <th>@item.PressName</th>
+                                            <th>@item.Version</th>
+                                            <th>@item.Price</th>
+                                            <th>
+                                                <a href="/Book/Delete?id=@item.id">删除</a>
+                                                <a href="/Book/Alter?id=@item.id">修改</a>
+                                            </th>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>*@
+                        @*<div id="btn" class="btn-group">
+                            <button type="button" class="btn btn-default" onclick="getList(1,@page.count,@page.pageSize)"><<</button>
+                            <button type="button" class="btn btn-default" onclick="getList(6,@page.count,@page.pageSize)"><</button>
+                            @for (var i = 1; i <= page.maxButtonCount; i++)
+                            {
+                                <button type="button" class="btn btn-default" onclick="getList(@i,@page.count,@page.pageSize)">@i</button>
+                            }
+                            <button type="button" class="btn btn-default" onclick="getList(6,@page.count,@page.pageSize)">></button>
+                            <button type="button" class="btn btn-default" onclick="getList(@(Math.Ceiling(page.count*1.0/page.pageSize)),@page.count,@page.pageSize)">>></button>
+                            </div>*@
+                    </div><! --/content-panel -->
+                </div><!-- /col-md-12 -->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+
+@section js{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <script src="~/assets/bootstrap.autocomplete.js"></script>
+    <script>
+        $('#bookList').bootstrapTable({
+            url: '/Book/GetList',
+            method: 'post',
+            dataType: "json",
+            dataField: "rows",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [1, 5, 10, 15],
+            striped: true,
+            showColumns: true,  //显示下拉框勾选要显示的列
+            showRefresh: true,  //显示刷新按钮
+            showToggle: true,//显示一行是否改成竖着
+            showPaginationSwitch: true,//是否显示 下面的分页框
+            search: true, //显示搜索框
+            //detailView: true,       //详情页面显示
+            toolbal: '#toolbar',
+            detailFormatter: function (index, row) {
+                return JSON.stringify(row);
+            },
+            queryParamsType: '',//采用自定义查询参数组织方式
+            queryParams: queryParams,//请求服务器时所传的参数
+            sidePagination: 'server',//指定服务器端分页
+            locale: 'zh-CN',//中文支持
+
+            //toolbar操作
+            toolbarAligh: 'left',//工具栏对齐方式
+            buttonsAligh: 'right',//按钮对齐方式
+            toolbar: '#toolbar',//指定工作栏
+
+
+            columns: [{
+                field: 'checkbox',
+                title: 'checkbox',
+                align: 'center',
+                valign: 'middle',
+                checkbox: true
+            }, {
+                field: 'id',
+                title: '序号',
+                align: 'center',
+                valign: 'middle',
+            },{
+                fieId: 'Img',
+                title: '图片',
+                align: 'center',
+                formatter:function(value,row,index){
+                    return "<button class='view' data-toggle='modal' data-target='"+"#modal_"+row.id+"' id='btn_img"+row.id+"'><img src='/upLoad/"+row.Img+"' style='width:70px;height:90px;' /></button>"+
+                        "<div class='modal' id='modal_" + row.id + "' tabindex='-1' role='dialog' aria-labelledby='modal_" + row.id + "'>" +
+                                "<img src='/upLoad/"+row.Img+"' style=;position:relative;top:70px;'/>"+
+                        "</div>"
+                }
+            },{
+                field: 'BookName',
+                title: '书名',
+                align: 'center',
+                valign: 'middle',
+                sortable: true
+            }, {
+                field: 'Author',
+                title: '作者',
+                align: 'center',
+                valign: 'middle',
+            },
+            {
+                field: 'ISBN',
+                title: 'ISBN',
+                align: 'center',
+                valign: 'middle',
+            },
+            {
+                field: 'PressName',
+                title: '供应商',
+                align: 'center',
+                valign: 'middle',
+            },
+            {
+                field: 'Version',
+                title: '版本',
+                align: 'center',
+                valign: 'middle',
+            },
+            {
+                field: 'Price',
+                title: '价格',
+                align: 'center',
+                valign: 'middle',
+            }
+            ],
+            //子页面（详情页）内容
+            //onExpandRow: function (index, row, $detail) {
+            //    oTableInit.InitSubTable(index, row, $detail);
+            //}
+        });
+        function queryParams(params) {
+            return {
+                PageSize: params.pageSize,//每页多少数据
+                PageNumber: params.pageNumber,//请求第几页
+                Query:params.searchText
+            }
+        }
+    </script>
+    <script>
+        //$('#txt_search').autocomplete({
+        //    source: function (query, process) {
+        //        var mathCount = 20;
+        //        //URL地址，接口对应数值，返回处理
+        //        $.post("/Book/GetSearch", { "query": query, "mathCount": mathCount }, function (resData) {
+                    
+        //            return process(resData);
+        //        })
+        //    },
+        //    formatItem: function (item) {
+        //        return item["BookName"]+"["+item["Author"]+"]["+item["ISBN"]+"]";
+        //    },
+        //    setValue: function (item) {
+        //        return { 'data-value': item["BookName"], 'real-value':JSON.stringify(item)};
+        //    }
+        //}),
+        //$('#btn_search').click(function () {
+        //    if($('#txt_search').attr('real-value')==''){
+        //        search="";
+        //    }else{
+        //        var search = [JSON.parse($('#txt_search').attr('real-value'))];
+        //    }
+            
+        //    $('#txt_search').attr('real-value', '');
+        //    $('#txt_search').attr('data-value', '');
+
+        //    if (search=="") {
+        //        var refresh = {
+        //            url: "/Book/GetList?PageSize=5&PageNumber=1",
+        //            silent: true,
+        //        }
+        //        $('#bookList').bootstrapTable("refresh");
+        //    }
+        //    $('#bookList').bootstrapTable('load', { total: search.length, rows: search });
+        //}),
+        $('#btn_add').click(function () {
+            window.location.href="/Book/Add";
+        }),
+        $('#btn_edit').click(function(){
+            var temp = $('#bookList').bootstrapTable('getSelections');
+            var id = temp[0].id;
+            if (temp.length == 1) {
+                var id = temp[0].id;
+                window.location.href = "/Book/Alter?Id=" + id;
+            } else {
+                alert("请选择一条");
+            }
+        })
+        $("#btn_delete").click(function () {
+            var con = confirm("确定删除?");
+            if (con == true) {
+                var id = $('#bookList').bootstrapTable('getSelections');
+                var ids = $.map($('#bookList').bootstrapTable('getSelections'),
+                function (row) {
+                    return row.id;
+                })
+                if (ids.length < 1) {
+                    alert("请选中一行");
+                } else {
+                    //ajax删除服务端
+                    $.ajax({
+                        url: "/Book/Delete",
+                        type: 'post',
+                        data: { Ids: ids },
+                        datatype: 'json',
+                        success: function (data) {
+                            //$('#bookList').bootstrapTable('refreshOptions', {pageSize:5,pageNumber:1})
+
+                            if (data >= 1) {
+                                $('#bookList').bootstrapTable('remove',
+                                {
+                                    fieId: 'id',
+                                    values: id
+                                });
+                                alert("删除成功");
+                                $('#bookList').bootstrapTable('refresh');
+                            }
+                            else {
+                                alert("删除失败");
+                            }
+                        },
+                    })
+                }
+            }
+        })
+        $('#btn_img').click(function () {
+
+        })
+    </script>
+}
+
+
+
+@*<script type="text/javascript">
+        function getList(currentPage,count,pageSize) {
+            //判断是否越界，如果向后五页之后大于最大页数，则等于最大页数，如果向前五页后小于1，则等于第一页
+            var max = Math.ceil(count * 1.0 / pageSize);
+            if(currentPage>max){
+                currentPage = max;
+            }else if(currentPage<=0){
+                currentPage = 1;
+            }
+            //ajax异步传输，同时刷新客户端上的表格和按钮
+            $.ajax({
+                url: "/Book/GetList",
+                data: "CurrentPage=" + currentPage,
+                type: "post",
+                dataType:"json",
+                success: function (result) {
+                    var str_table = "";
+                    for (var i = 0; i < result.list.length; i++) {
+                        str_table = str_table + "<tr id = \"tr_" + result.list[i].id + "\">";
+                        str_table = str_table + "<th>" + result.list[i].id + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].BookName + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].Author + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].ISBN + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].PressName + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].Version + "</th>";
+                        str_table = str_table + "<th>" + result.list[i].Price + "</th>";
+                        str_table = str_table + "<th>";
+                        str_table = str_table + "<a href = \"Book/Delete?id=" + result.list[i].Id + "\">删除</a>";
+                        str_table = str_table + "<a href = \"Book/Alter?id=" + result.list[i].Id + "\">修改</a>";
+                        str_table = str_table + "</th>";
+                        str_table = str_table + "</tr>";
+                    }
+                    document.getElementById("tableBody").innerHTML = str_table;
+                    //用于记录修改后的信息str_btn
+                    var str_btn = "<div id=\"btn\" class=\"btn-group\">";
+                    str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList(1,"
+                        +result.count+","+result.pageSize+")\"><<</button>";
+                    str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                        + (currentPage-5)+","+result.count+","+result.pageSize+ ")\"><</button>";
+                    //计算页数的最大值
+                    var count = Math.ceil(result.count * 1.0 / result.pageSize);
+                    //将点击后的按钮置于中间，(1.2，count,count-1四个页面位置除外)
+                    if (currentPage <= 2 ) {
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + 1+","+result.count+","+result.pageSize+")\">" + 1 + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + 2+"," +result.count+","+result.pageSize+")\">" + 2 + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + 3+","+result.count+","+result.pageSize+ ")\">" + 3 + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + 4 +","+result.count+","+result.pageSize+")\">" + 4 + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + 5 +","+result.count+","+result.pageSize+")\">" + 5 + "</button>";
+                    } else if (currentPage >= count - 1) {
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + (count - 4)+","+result.count+","+result.pageSize + ")\">" + (count - 4) + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + (count - 3)+","+result.count+","+result.pageSize  + ")\">" +(count - 3)  + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + (count - 2)+","+result.count+","+result.pageSize  + ")\">" + (count - 2) + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + (count - 1)+","+result.count+","+result.pageSize  + ")\">" + (count - 1)  + "</button>";
+                        str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                            + (count) +","+result.count+","+result.pageSize + ")\">" + (count) + "</button>";
+                    } else if (currentPage <= (Math.ceil(result.count * 1.0 / result.pageSize) - 2) && currentPage > 2) {
+                        for (var i = currentPage - 2; i < currentPage - 2 + result.maxButtonCount; i++) {
+                            str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                                + i +","+result.count+","+result.pageSize+ ")\">" + i + "</button>";
+                        }
+                    }
+                    str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                        + (currentPage + result.maxButtonCount)+","+result.count+","+result.pageSize + ")\">></button>";
+                    str_btn = str_btn + " <button type=\"button\" class=\"btn btn-default\" onclick=\"getList("
+                        + Math.ceil(result.count * 1.0 / result.pageSize)+","+result.count+","+result.pageSize + ")\">>></button>";
+
+                    document.getElementById("btn").innerHTML = str_btn;//更改按钮信息
+                },
+                error: function () {
+
+                }
+            });
+        }
+    </script>*@

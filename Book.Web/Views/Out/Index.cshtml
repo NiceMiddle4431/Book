@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>出库页面</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-md-12 mt">
+                    <div class="content-panel">
+                        <table id="stockOutList"></table>
+                        <div id="toolbar" class="btn-group pull-right" style="margin-right: 20px;">
+                            <button id="btn_delete" type="button" class="btn btn-default" style="">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+                            </button>
+                            <button id="btn_add" type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+                            </button>
+                        </div>
+                    </div><! --/content-panel -->
+                </div><!-- /col-md-12 -->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+@section js{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <script>
+        $('#stockOutList').bootstrapTable({
+            url: '/Out/GetList',
+            method: 'post',
+            dataType: "json",
+            dataField: "rows",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [1, 5, 10, 15],
+            striped: true,
+            showColumns: true,  //显示下拉框勾选要显示的列
+            showRefresh: true,  //显示刷新按钮
+            showToggle: true,//显示一行是否改成竖着
+            showPaginationSwitch: true,//是否显示 下面的分页框
+            search: true, //显示搜索框
+            detailView: true,       //详情页面显示
+            toolbal: '#toolbar',
+            detailFormatter: function (index, row) {
+                return JSON.stringify(row);
+            },
+            queryParamsType: '',//采用自定义查询参数组织方式
+            queryParams: queryParams,//请求服务器时所传的参数
+            sidePagination: 'server',//指定服务器端分页
+            locale: 'zh-CN',//中文支持
+
+            //toolbar操作
+            toolbarAligh: 'left',//工具栏对齐方式
+            buttonsAligh: 'right',//按钮对齐方式
+            toolbar: '#toolbar',//指定工作栏
+
+
+            columns: [{
+                field: 'checkbox',
+                title: 'checkbox',
+                checkbox: true
+            }, {
+                field: 'Head.Id',
+                title: '序号'
+            }, {
+                field: 'Head.UserName',
+                title: '经手人',
+                align: 'center',
+                sortable: true
+            }, {
+                field: 'Head.CreateTime',
+                title: '创立时间',
+                align: 'center',
+                //自定义显示内容
+                formatter: function (value,row,index) {
+                    var tmp = eval('new ' + eval(value).source);
+                    return tmp.getFullYear() + '-' + (tmp.getMonth() + 1) + '-' + tmp.getDate();
+                }
+            },
+            {
+                field: 'Head.TotalMoney',
+                title: '总金额',
+                align: 'center'
+            },
+            {
+                field: 'Head.Customerld.CustomerldName',
+                title: '供应商',
+                align: 'center'
+            }
+            ],
+            //子页面（详情页）内容
+            onExpandRow: function (index,row,$detail) {
+                oTableInit.InitSubTable(index, row, $detail);
+            }
+        });
+        function queryParams(params) {
+            return{
+                pageSize: params.pageSize,//每页多少数据
+                pageNumber: params.pageNumber//请求第几页
+            }
+        }
+    </script>
+    <script>
+        var oTableInit = new Object();
+        oTableInit.InitSubTable = function (index, row, $detail) {
+            var parentid = row.Head.Id;
+            var cur_table = $detail.html('<table></table>').find('table');
+            $(cur_table).bootstrapTable({
+                url: '/Out/GetModel',
+                method: 'post',
+                dataType: 'json',
+                dataField: "data",
+                queryParams: { headId: parentid },
+                ajaxOptions: { headId: parentid },
+                clickToSelect: true,
+                pagination: true, //是否显示分页（*）
+                sortOrder: "asc", //排序方式
+                pageNumber: 1, //初始化加载第一页，默认第一页
+                height: 260,
+                pageSize: 6, //每页的记录行数（*）
+                pageList: [6, 12, 24, 48], //可供选择的每页的行数（*）
+                paginationPreText: '<', //上下翻页
+                paginationNextText: '>',
+                columns: [{
+                    title: "序号",
+                    formatter: function (value, row, index) {
+                        return index + 1;
+                    },
+                    rowspan: 1,
+                    align: 'center',
+                    width: '50px'
+                }, {
+                    field: 'Book.BookName',
+                    title: '书名',
+                    align: 'left',
+                }, {
+                    field: 'Book.PressName',
+                    title: '出版社',
+                    align: 'left',
+                }, {
+                    field: 'Book.ISBN',
+                    title: '书号',
+                    align: 'center',
+                }, {
+                    field: 'Book.Author',
+                    title: '作者',
+                    align: 'right',
+                }, {
+                    field: 'Book.Price',
+                    title: '价格',
+                    align: 'right',
+                }, {
+                    field: 'Discount',
+                    title: '折扣',
+                    align: 'right',
+                }, {
+                    field: 'Amount',
+                    title: '数量',
+                    align: 'right',
+                }],
+                //无线循环取子表，直到子表里面没有记录
+                responseHandler: function (res) {
+                    //在ajax获取到数据，渲染表格之前，修改数据源
+                    return res;
+                }
+            });
+            return oTableInit;
+        };
+    </script>
+    <script>
+        $("#btn_delete").click(function () {
+            //alert("点击成功");
+            //获取所有的选择的项
+            var con = confirm("确定删除?");
+            if (con == true) {
+                var ids = $.map($('#stockOutList').bootstrapTable('getSelections'),
+                function (row) {
+                    return row.Head.Id;
+                })
+                if (ids.length < 1) {
+                    alert("请选中一行");
+                } else {
+                    //ajax删除服务端
+                    $.ajax({
+                        url: "/Out/Delete",
+                        type: 'post',
+                        data: { HeadIds: ids },
+                        datatype: 'json',
+                        success: function (data) {
+                            if (data >= 1) {
+                                $('#stockOutList').bootstrapTable('remove',
+                                {
+                                    fieId: 'Head.Id',
+                                    values: ids
+                                });
+                                alert("删除成功");
+                                $('#stockOutList').bootstrapTable('refresh')
+                            }
+                            else {
+                                alert("删除失败");
+                            }
+                        },
+                        error: function () {
+
+                        }
+                    })
+                }
+            }
+        })
+        $('#btn_add').click(function () {
+            window.location.href = "/Out/Add";
+        })
+    </script>
+}

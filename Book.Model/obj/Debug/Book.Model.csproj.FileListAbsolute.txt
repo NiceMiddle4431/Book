@@ -1,0 +1,20 @@
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Model\bin\Debug\Book.Model.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Model\bin\Debug\Book.Model.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Model\obj\Debug\Book.Model.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Model\obj\Debug\Book.Model.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.Model\obj\Debug\Book.Model.pdb
+C:\Users\admin\Desktop\Book\Book.Model\bin\Debug\Book.Model.dll
+C:\Users\admin\Desktop\Book\Book.Model\bin\Debug\Book.Model.pdb
+C:\Users\admin\Desktop\Book\Book.Model\obj\Debug\Book.Model.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Book\Book.Model\obj\Debug\Book.Model.dll
+C:\Users\admin\Desktop\Book\Book.Model\obj\Debug\Book.Model.pdb
+D:\VS2015解决方案\Book\Book.Model\bin\Debug\Book.Model.dll
+D:\VS2015解决方案\Book\Book.Model\bin\Debug\Book.Model.pdb
+D:\VS2015解决方案\Book\Book.Model\obj\Debug\Book.Model.dll
+D:\VS2015解决方案\Book\Book.Model\obj\Debug\Book.Model.pdb
+C:\Users\Administrator\Desktop\Book\Book.Model\bin\Debug\Book.Model.dll
+C:\Users\Administrator\Desktop\Book\Book.Model\bin\Debug\Book.Model.pdb
+C:\Users\Administrator\Desktop\Book\Book.Model\obj\Debug\Book.Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Book\Book.Model\obj\Debug\Book.Model.dll
+C:\Users\Administrator\Desktop\Book\Book.Model\obj\Debug\Book.Model.pdb
+D:\VS2015解决方案\Book\Book.Model\obj\Debug\Book.Model.csprojResolveAssemblyReference.cache

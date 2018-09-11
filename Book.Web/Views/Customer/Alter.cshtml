@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Alter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Book.Model.T_Base_Customer user = ViewBag.user;
+}
+
+<html>
+<head>
+    <title>修改书籍</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i>用户修改</h4>
+                        <form class="form-horizontal style-form" action="/Customer/AlterSave" method="post">
+                            <div class="hidden">
+                                <label class="col-sm-2 col-sm-2 control-label">用户Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="Id" name="Id" value="@user.Id" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户名称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerName" name="CustomerName" value="@user.CustomerName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户密码</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerPwd" name="CustomerPwd" value="@user.CustomerPwd" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户邮箱</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerPostbox" name="CustomerPostbox" value="@user.CustomerPostbox" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerTel" name="CustomerTel" value="@user.CustomerTel" />
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-default" value="提交" />
+                        </form>
+                    </div>
+                </div><!-- col-lg-12-->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>增加出版社</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i>用户添加</h4>
+                        <form class="form-horizontal style-form" action="/Customer/AddSave" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerName" name="CustomerName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户密码</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerPwd" name="CustomerPwd" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户邮箱</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerPostbox" name="CustomerPostbox" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">用户电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CustomerTel" name="CustomerTel" />
+                                </div>
+                            </div>
+                            
+                            <input type="submit" class="btn btn-default" value="提交" />
+                        </form>
+                    </div>
+                </div><!-- col-lg-12-->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+

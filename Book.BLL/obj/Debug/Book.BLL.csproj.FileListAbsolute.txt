@@ -1,0 +1,45 @@
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.BLL.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.BLL.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.DAL.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.Model.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.DAL.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\bin\Debug\Book.Model.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\obj\Debug\Book.BLL.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\obj\Debug\Book.BLL.dll
+c:\users\administrator\documents\visual studio 2015\Projects\Book\Book.BLL\obj\Debug\Book.BLL.pdb
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.BLL.dll
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.BLL.pdb
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.DAL.dll
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.Model.dll
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.DAL.pdb
+C:\Users\Administrator\Downloads\Book\Book.BLL\bin\Debug\Book.Model.pdb
+C:\Users\Administrator\Downloads\Book\Book.BLL\obj\Debug\Book.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\Book\Book.BLL\obj\Debug\Book.BLL.dll
+C:\Users\Administrator\Downloads\Book\Book.BLL\obj\Debug\Book.BLL.pdb
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.BLL.dll
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.BLL.pdb
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.DAL.dll
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.Model.dll
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.DAL.pdb
+C:\Users\Administrator\Desktop\Book\Book.BLL\bin\Debug\Book.Model.pdb
+C:\Users\Administrator\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.dll
+C:\Users\Administrator\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.pdb
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.BLL.dll
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.BLL.pdb
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.DAL.dll
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.Model.dll
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.DAL.pdb
+C:\Users\admin\Desktop\Book\Book.BLL\bin\Debug\Book.Model.pdb
+C:\Users\admin\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.dll
+C:\Users\admin\Desktop\Book\Book.BLL\obj\Debug\Book.BLL.pdb
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.BLL.dll
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.BLL.pdb
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.DAL.dll
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.Model.dll
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.DAL.pdb
+D:\VS2015解决方案\Book\Book.BLL\bin\Debug\Book.Model.pdb
+D:\VS2015解决方案\Book\Book.BLL\obj\Debug\Book.BLL.csprojResolveAssemblyReference.cache
+D:\VS2015解决方案\Book\Book.BLL\obj\Debug\Book.BLL.dll
+D:\VS2015解决方案\Book\Book.BLL\obj\Debug\Book.BLL.pdb

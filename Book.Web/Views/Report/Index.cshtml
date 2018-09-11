@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>库存展示</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row">
+                <div class="col-md-12 mt">
+                    <div class="content-panel">
+                        <table id="stockInList"></table>
+                    </div><! --/content-panel -->
+                </div><!-- /col-md-12 -->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+@section js{
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <script>
+        $('#stockInList').bootstrapTable({
+            url: '/Report/GetList',
+            method: 'post',
+            dataType: "json",
+            dataField: "rows",
+            classes: 'table',//边框
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [1, 5, 10, 20],
+            striped: true,
+            showColumns: true,  //显示下拉框勾选要显示的列
+            showRefresh: true,  //显示刷新按钮
+            showToggle: true,//显示一行是否改成竖着
+            showPaginationSwitch: true,//是否显示 下面的分页框
+            search: true, //显示搜索框
+            //detailView: true,       //详情页面显示
+            toolbal: '#toolbar',
+            detailFormatter: function (index, row) {
+                return JSON.stringify(row);
+            },
+            queryParamsType: '',//采用自定义查询参数组织方式
+            queryParams: queryParams,//请求服务器时所传的参数
+            sidePagination: 'server',//指定服务器端分页
+            locale: 'zh-CN',//中文支持
+
+
+            columns: [
+                {
+                    field: 'BookId',
+                    title: '序号',
+                    align: 'center',
+                    valign: 'middle',
+                }, {
+                    fieId: 'Img',
+                    title: '图片',
+                    align: 'center',
+                    formatter: function (value, row, index) {
+                        return "<button class='view' data-toggle='modal' data-target='" + "#modal_" + row.BookId + "' id='btn_img" + row.BookId + "'><img src='/upLoad/" + row.Img + "' style='width:70px;height:90px;' /></button>" +
+                            "<div class='modal' id='modal_" + row.BookId + "' tabindex='-1' role='dialog' aria-labelledby='modal_" + row.id + "'>" +
+                                    "<img src='/upLoad/" + row.Img + "' style=;position:relative;top:70px;'/>" +
+                            "</div>"
+                    }
+                },
+                {
+                    field: 'BookName',
+                    align: 'center',
+                    valign: 'middle',
+                    title: '书名',
+                    sortable: true
+                },
+                {
+                    field: 'Amount',
+                    title: '库存数量',
+                    align: 'center',
+                    valign: 'middle',
+                    sortable: true
+                }
+            ],
+        });
+        function queryParams(params) {
+            return {
+                pageSize: params.pageSize,//每页多少数据
+                pageNumber: params.pageNumber//请求第几页
+            }
+        }
+    </script>
+}

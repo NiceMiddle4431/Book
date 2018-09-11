@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <title>添加入库单</title>
+</head>
+
+<body>
+    <section id="main-content">
+        <section class="wrapper">
+            <!-- BASIC FORM ELELEMNTS -->
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i>添加入库单</h4>
+                        <!--表单-->
+                        <form class="form-horizontal style-form" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">经手人</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="UserName" name="UserName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">供应商</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="ProviderName" name="ProviderName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-sm-2 control-label">时间</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="CreateTime" name="CreateTime" />
+                                </div>
+                            </div>
+                        </form>
+                        <!--新增图书表格-->
+                        <table id="BookList"></table>
+                        <div id="toolbar" class="input-group" style="max-width:300px;">
+                            <input id="textAddItem" type="text" class="form-control" placeholder="输入书名或书号" />
+                            <span class="input-group-btn">
+                                <button id="btnAddItem" class="btn btn-default">新增</button>
+                                <button class="btn btn-default" type="button" id="btnSave">保存</button>
+                            </span>
+                        </div>
+                        <
+                    </div>
+                </div><!-- col-lg-12-->
+            </div><!-- /row -->
+        </section><! --/wrapper -->
+    </section><!-- /MAIN CONTENT -->
+</body>
+</html>
+@section js{
+    <script src="~/assets/bootstrap.autocomplete.js"></script>
+    <link href="~/assets/bootstraptable/src/bootstrap-table.css" rel="stylesheet" />
+    <script src="~/assets/bootstraptable/src/bootstrap-table.js"></script>
+    <script src="~/assets/x-editable-develop/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    <script src="~/assets/bootstraptable/src/bootstrap-table-editable.js"></script>
+    <script>
+        $('#ProviderName').autocomplete({
+            source: function (query, process) {
+                var mathCount = 20;
+                //URL地址，接口对应数值，返回处理
+                $.post("/Provider/GetSearch", { "providerName": query, "mathCount": mathCount }, function (resData) {
+                    if (resData.length < 1) {
+                        alert("供应商名不正确");
+                        $("#ProviderName").parent().toggleClass("has-error");
+                    } else {
+                        $("#ProviderName").parent().toggleClass("has-error");
+                        return process(resData);
+                    }
+                })
+            },
+            formatItem: function (item) {
+                return item["ProviderName"];
+            },
+            setValue: function (item) {
+                return { 'data-value': item["ProviderName"], 'real-value': item["Id"] };
+            }
+        });
+        $('#textAddItem').autocomplete({
+            source: function (query, process) {
+                var mathCount = 20;
+                //URL地址，接口对应数值，返回处理
+                $.post("/Book/GetSearch", { "query": query, "mathCount": mathCount },
+                    function (resData) {
+                        if (resData.length < 1) {
+                            alert("书名不正确");
+                            $("#textAddItem").parent().toggleClass("has-error");
+                        } else {
+                            $("#textAddItem").parent().toggleClass("has-error");
+                            return process(resData);
+                        }
+                    })
+            },
+            formatItem: function (item) {
+                return item["BookName"];
+            },
+            setValue: function (item) {
+                return { 'data-value': item["BookName"], 'real-value': JSON.stringify(item) };
+            },
+
+        });
+        $('#BookList').bootstrapTable({
+
+            data: [],
+            classes: 'table',//边框-
+            undefinedText: '',//当数据为 undefined 时显示的字符
+            pagination: true,//启动分页
+            paginationLoop: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pageList: [1, 5, 10, 20],
+            striped: true,
+            showColumns: false,  //显示下拉框勾选要显示的列
+            showRefresh: false,  //显示刷新按钮
+            showToggle: false,//显示一行是否改成竖着
+            showPaginationSwitch: false,//是否显示 下面的分页框
+            //toolbar操作
+            toolbarAlign: 'left',//工具栏对齐方式
+            buttonsAlign: 'right',//按钮对齐方式
+            toolbar: '#toolbar',//指定工作栏
+
+            columns: [
+            {
+                field: 'BookId',
+                title: '书Id',
+                align: 'center',
+                sortable: true
+            },
+            {
+                field: 'ISBN',
+                title: 'ISBN书号',
+                align: 'center',
+                sortable: true
+            },
+            {
+                field: 'BookName',
+                title: '书名',
+                align: 'center',
+                sortable: true
+            },
+            {
+                field: 'PressName',
+                title: '出版社',
+                align: 'center'
+            },
+            {
+                field: 'Amount',
+                title: '数量',
+                align: 'center',
+                editable: {
+                    type: 'text'
+                }
+            },
+            {
+                field: 'Discount',
+                title: '折扣',
+                align: 'center',
+                editable: {
+                    type: 'text'
+                }
+            },
+            {
+                field: 'Price',
+                title: '单本价格',
+                align: 'center',
+            },
+            {
+                field: "操作",
+                title: "操作",
+                align: "center",
+                formatter: function (value, row, index) {
+                    return "<a class='btn btn-default' href='#' id='btnDeleteItem role='button' onclick='DeleteItem(" + row.BookId + ");return false;'>删除</a>";
+                }
+            }]
+        });
+
+        $('#btnAddItem').click(function () {
+            var rowItem = JSON.parse($('#textAddItem').attr("real-value"));
+            var id = $('#textAddItem').attr('real-value')
+            var bookName = $('#textAddItem').attr('data-value');
+            if (id != "") {
+                $("#BookList").bootstrapTable("insertRow", {
+                    index: 0, row: {
+                        BookId: rowItem.id,
+                        BookName: rowItem.BookName,
+                        ISBN: rowItem.ISBN,
+                        PressName: rowItem.PressName,
+                        Price:rowItem.Price,
+                        Amount: 0,
+                        Discount:1
+                    }
+                })
+                $('#textAddItem').val("");
+                $('#textAddItem').attr('real-value', "");
+            }
+        });
+        function DeleteItem(Id) {
+            var ids = [Id];
+            $('#BookList').bootstrapTable('remove', {
+                field: 'BookId',
+                values: ids
+            });
+        };
+        $('#btnSave').click(function(){
+            var head = {
+                UserName: $('#UserName').val(),
+                CreateTime: $('#CreateTime').val(),
+                ProviderId: $('#ProviderName').attr('real-value')
+            }
+            var items = $('#BookList').bootstrapTable('getData');
+            $.ajax({
+                type: "Post",
+                url: "/In/AddSave",
+                data:{
+                    Head:head,
+                    Items:items
+                },
+                dataType: 'Json',
+                success: function (data) {
+                    if (data == 1) {
+                        alert("插入成功");
+                        window.location.href = "/In/Index";
+                    }
+
+                }
+            })
+        });
+    </script>
+
+}
